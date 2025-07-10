@@ -1,4 +1,4 @@
-import Grilla from "./productos/Grilla";
+import Calculadora from "./Calculadora";
 import Header from "./header/Header";
  
 function App(){
@@ -6,8 +6,8 @@ function App(){
         <>
             <Header />
             <main>
-                <h1>Productos destacados</h1>
-                <Grilla />
+                <h1>Calculadora simple</h1>
+                <Calculadora nombre="Formulario de suma" />
             </main>
         </>
     )
