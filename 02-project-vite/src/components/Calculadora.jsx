@@ -1,46 +1,50 @@
-import { Component } from "react";
+import { useState, useEffect } from "react";
 
-// Son declaradas con Clases - POO
-class Calculadora extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            numero1: '',
-            numero2: ''
-        }
+const Calculadora = ({nombre}) => {
 
-        this.setNumber = this.setNumber.bind(this);
-    }
-
-    setNumber = (e) => {
-    this.setState({
-      ...this.state,
-      [e.target.name]: e.target.value,
+    // Por norma es state y setState
+    const [numeros, setNumeros] = useState({
+        numero1: '',
+        numero2: ''
     });
-  };
 
-    render(){
-        return (
-            <>
-                <h2>{ this.props.nombre }</h2>
-                <form>
-                    <input 
-                        type="number" 
-                        name="numero1" 
-                        value={this.state.numero1} 
-                        onChange={this.setNumber}
-                    />
-                    <input 
-                        type="number" 
-                        name="numero2" 
-                        value={this.state.numero2} 
-                        onChange={this.setNumber}
-                    />
-                </form>
-                <span>Resultado: { Number(this.state.numero1) + Number(this.state.numero2) }</span>
-            </>
-        )
-    }
+    const [texto, setTexto] = useState("");
+
+
+    useEffect(() => {
+        console.log(new Date().getTime());
+    }, [texto]);
+
+    const setNumber = (e) => {
+        setNumeros({
+            ...numeros,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    return (
+        <>
+            <h2>{ nombre }</h2>
+            <form>
+                <input 
+                    type="number" 
+                    name="numero1" 
+                    value={numeros.numero1} 
+                    onChange={setNumber}
+                />
+                <input 
+                    type="number" 
+                    name="numero2" 
+                    value={numeros.numero2} 
+                    onChange={setNumber}
+                />
+            </form>
+            <span>Resultado: { Number(numeros.numero1) + Number(numeros.numero2) }</span>
+            <input type="text" onChange={(e) => { setTexto(e.target.value) }} />
+            <span>{ texto }</span>
+        </>
+    )
+
 }
 
 export default Calculadora;
