@@ -8,9 +8,11 @@ function App() {
     const[usuarios, setUsuarios] = useState([]);
 
     useEffect(() => {
-        fetch(`${API_URL}users`) // o https://jsonplaceholder.typicode.com/users
-            .then((resp) => resp.json())
-            .then((data) => setUsuarios(data.users))
+        axios.get(`${API_URL}users`) // o https://jsonplaceholder.typicode.com/users
+            .then((data) => {
+                // console.log(data);
+                setUsuarios(data.data.users)
+            })
             .catch(() => {
                 console.error("Fallo en la petición");
             })
