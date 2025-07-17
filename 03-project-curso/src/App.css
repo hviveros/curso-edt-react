@@ -11,13 +11,13 @@
 }
 
 .label {
+  color:gray;
+}
+
+.male {
   color: skyblue;
 }
 
-.positivo {
-  color: #4FFF60;
-}
-
-.negativo {
-  color: #FF5977;
+.female {
+  color: pink;
 }

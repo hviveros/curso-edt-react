@@ -28,8 +28,17 @@ function App() {
             <h1>Lista de usuarios</h1>
             <div className="usuario-container">  
                 {
-                usuarios.map(({id, firstName, lastName, email, address, company}) => (
-                    <Usuario key={id} firstName={firstName} lastName={lastName} email={email} address={address.city} company={company.department}/>
+                usuarios.map(({id, firstName, lastName, company, gender, address, lat, email}) => (
+                    <Usuario 
+                    key={id} 
+                    firstName={firstName} 
+                    lastName={lastName} 
+                    company={company.department}
+                    gender={gender}
+                    address={address.city}
+                    lat={address.coordinates.lat} 
+                    email={email} 
+                    />
                 ))
                 }
             </div>
