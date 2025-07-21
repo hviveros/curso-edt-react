@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Usuario from "./usuario";
+import Usuario from "./usuario/usuario";
+import Menu from "./menu/menu"
 import "./App.css"
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
 
     return(
         <div className="app-container">
+            <Menu />
             <h1>Lista de usuarios</h1>
             <div className="usuario-container">  
                 {
