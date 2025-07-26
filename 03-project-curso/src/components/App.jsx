@@ -26,7 +26,6 @@ function App() {
 
     return(
         <div className="app-container">
-            <Menu />
             <h1>Lista de usuarios</h1>
             <div className="usuario-container">  
                 {
