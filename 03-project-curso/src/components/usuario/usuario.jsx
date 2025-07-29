@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./usuario.css"
 
 const Usuario = ({id, firstName, lastName, company, gender, address, lat, email }) => {
@@ -15,6 +16,7 @@ const Usuario = ({id, firstName, lastName, company, gender, address, lat, email 
                 <p><span className="label">Lat:</span> {parseFloat(lat).toFixed(2)}</p>
                 <span className="label">{email}</span>
             </div>
+            <Link to={`/usuarios/${id}`}>Ver detalles</Link>
         </div>
     )
 }

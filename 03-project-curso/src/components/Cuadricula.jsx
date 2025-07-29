@@ -37,7 +37,8 @@ function Cuadricula() {
                     gender={gender}
                     address={address.city}
                     lat={address.coordinates.lat} 
-                    email={email} 
+                    email={email}
+                    id={id} 
                     />
                 ))
                 }
