@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Usuario from "./usuario/usuario";
+import Articulo from "./articulo/articulo";
 import "./Cuadricula.css"
 
 function Cuadricula() {
     
     const API_URL = import.meta.env.VITE_API_URL;
 
-    const[usuarios, setUsuarios] = useState([]);
+    const[articulos, setArticulos] = useState([]);
 
     useEffect(() => {
-        axios.get(`${API_URL}users`) // o https://jsonplaceholder.typicode.com/users
+        axios.get(`${API_URL}posts`)
             .then((data) => {
-                // console.log(data);
-                setUsuarios(data.data.users)
+                // console.log(data.data);
+                setArticulos(data.data)
             })
             .catch(() => {
                 console.error("Fallo en la petición");
@@ -21,23 +21,18 @@ function Cuadricula() {
     }, []);// Se va ejecutar una sóla vez
 
     // Loader
-    if(!usuarios) return (<span>Cargando...</span>);
+    if(!articulos) return (<span>Cargando...</span>);
 
     return(
         <div className="app-container">
-            <h1>Lista de usuarios</h1>
-            <div className="usuario-container">  
+            <h1>Lista de articulos</h1>
+            <div className="articulo-container">  
                 {
-                usuarios.map(({id, firstName, maidenName, company, gender, address, lat, email}) => (
-                    <Usuario 
+                articulos.map(({id, title, userId}) => (
+                    <Articulo 
                     key={id} 
-                    firstName={firstName} 
-                    maidenName={maidenName} 
-                    company={company.department}
-                    gender={gender}
-                    address={address.city}
-                    lat={address.coordinates.lat} 
-                    email={email}
+                    title={title} 
+                    userId={userId} 
                     id={id} 
                     />
                 ))

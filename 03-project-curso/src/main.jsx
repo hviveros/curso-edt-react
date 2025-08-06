@@ -5,7 +5,7 @@ import App from './components/App.jsx'
 import Home from './Home.jsx'
 import Pagina404 from './components/404.jsx'
 import Cuadricula from './components/Cuadricula.jsx'
-import UsuarioPage from './components/usuario/UsuarioPage.jsx'
+import ArticuloPage from './components/articulo/ArticuloPage.jsx'
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
@@ -13,9 +13,9 @@ createRoot(document.getElementById('root')).render(
             <Route path='/' element={ <App /> }>
                 <Route index element={ <Home /> } />
             </Route>
-            <Route path='/usuarios' element={ <App /> }>
+            <Route path='/articulos' element={ <App /> }>
                 <Route index element={ <Cuadricula /> } />
-                <Route path=':id' element={ <UsuarioPage /> } />
+                <Route path=':id' element={ <ArticuloPage /> } />
             </Route>
             <Route path='*' element={ <Pagina404 /> } />
         </Routes>
