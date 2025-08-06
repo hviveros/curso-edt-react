@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import "./usuario.css"
 
-const Usuario = ({id, firstName, lastName, company, gender, address, lat, email }) => {
+const Usuario = ({id, firstName, maidenName, company, gender, address, lat, email }) => {
     return(
         <div key={id} className="usuario">
-            <h2>{firstName} {lastName}</h2>
+            <h2>{firstName} {maidenName}</h2>
             <div className="info">
                 <p>{company}</p>
                 <p>

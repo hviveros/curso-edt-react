@@ -28,11 +28,11 @@ function Cuadricula() {
             <h1>Lista de usuarios</h1>
             <div className="usuario-container">  
                 {
-                usuarios.map(({id, firstName, lastName, company, gender, address, lat, email}) => (
+                usuarios.map(({id, firstName, maidenName, company, gender, address, lat, email}) => (
                     <Usuario 
                     key={id} 
                     firstName={firstName} 
-                    lastName={lastName} 
+                    maidenName={maidenName} 
                     company={company.department}
                     gender={gender}
                     address={address.city}
