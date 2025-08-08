@@ -1,24 +1,10 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import usePetition from "../hooks/usePetition";
 import Articulo from "./articulo/articulo";
 import "./Cuadricula.css"
 
 function Cuadricula() {
-    
-    const API_URL = import.meta.env.VITE_API_URL;
 
-    const[articulos, setArticulos] = useState([]);
-
-    useEffect(() => {
-        axios.get(`${API_URL}posts`)
-            .then((data) => {
-                // console.log(data.data);
-                setArticulos(data.data)
-            })
-            .catch(() => {
-                console.error("Fallo en la petición");
-            })
-    }, []);// Se va ejecutar una sóla vez
+    const [articulos, cargandoArticulos] = usePetition(`posts`);
 
     // Loader
     if(!articulos) return (<span>Cargando...</span>);
