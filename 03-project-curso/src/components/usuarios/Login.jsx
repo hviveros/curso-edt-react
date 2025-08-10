@@ -47,7 +47,7 @@ const Login = () => {
             <h1>Iniciar sesión</h1>
             <form onSubmit={submit}>
                 <div className="field">
-                    <label htmlFor="email">Correo Electrónico</label>
+                    <label htmlFor="email">Correo: eve.holt@reqres.in</label>
                     <input required onChange={(e) => {
                         setUser({
                         ...user,
@@ -56,7 +56,7 @@ const Login = () => {
                     }} type="email" name="email" />
                 </div>
                 <div className="field">
-                    <label htmlFor="password">Contraseña</label>
+                    <label htmlFor="password">Contraseña: cityslicka</label>
                     <input required onChange={(e) => {
                         setUser({
                         ...user,
